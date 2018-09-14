@@ -1,0 +1,84 @@
+<html>
+	<head>
+	<title>Img Event Action</title>
+        <style>
+            body{
+                background: gray;
+            }
+            #event{
+                height: 800px;
+                width: 820px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 100px;
+            }
+            img{
+                border:5px solid yellow;
+                height: auto;
+                width:800px;
+             }
+            .btn{
+                margin:3px;
+                float: left;
+                width:400px;
+                height: 45px;
+                background:#05032f;
+                border:2px solid yellow;
+                border-radius: 20px;
+                color:white;
+                font-size: 20px;
+                font-family:fantasy;
+                animation:dinesh 10s infinite;
+                transition: all;
+                transition-duration: 1s;
+            }
+            .btn:hover{
+                text-transform: uppercase;
+                font-size: 24px;
+            }
+         @keyframes dinesh{
+            0%{background-color:#ff4800;color:#fafa23;}
+           
+          
+            25%{background-color:#0ff4f4;color:#d812d8;}
+           
+             50%{background-color:#09f212;color:#f4097e;}
+           
+            75%{background-color:#f20909;color:#f5f504;}
+            100%{background-color:#ffffff;color:#ff4800;}
+        }
+        </style>
+	</head>
+<body>
+    <div id="event">
+        <h1></h1>
+		<img src="img/1.jpg" id="img1"><br>
+		<input type="button" id="button1" class="btn" value="Previous">
+		<input type="button" id="button2"  class="btn" value="Next">
+    </div>
+	<script>
+		document.getElementById("button1").addEventListener("click",fun1);
+		document.getElementById("button2").addEventListener("click",fun2);
+		var allimages=["img/1.jpg","img/3.jpg","img/11.jpg","img/4.jpg","img/12.jpg","img/143.jpg","img/19.jpg","img/44.jpg","img/22.jpg"];
+		var c=0;
+		function fun1()
+		{
+			c--;
+			if (c==-1)
+			{
+				c=0;
+			}
+		document.getElementById("img1").src=allimages[c];
+		}
+		function fun2()
+		{
+			c++;
+			if (c==allimages.length)
+				{
+					c=allimages.length-1;
+				}
+			document.getElementById("img1").src=allimages[c];	
+		}
+	</script>
+</body>
+</html>

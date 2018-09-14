@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate:to create custom effect by using css.</title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <script>
+        $(function(){
+           $("#l").click(function(){
+              $("#div").animate({"width":"0px","font-size":"0px","margin":"0",},3000);
+           });
+            
+             $("#r").click(function(){
+         $("#div").animate({"width":"300px","font-size":"22px","margin":"0","height":"300"},3000);
+           });
+            
+             $("#w").click(function(){
+              $("#div").animate({"width":"700px","height":"600px","font-size":"42px","margin-top":"30px"},3000);      
+            });
+                $("#m").click(function(){
+              $("#div").animate({"margin-left":"400","margin-top":"250"},1000);
+           });
+            $("#s").click(function(){
+              $("#div").animate({"font-size":"30px","width":"300px","height":"300px"},1000);
+           });
+            
+              $("#rs").click(function(){
+              $("#div").animate({"width":"300px","height":"300px","font-size":"22px","margin":"0"},3000);
+           });
+           
+        });
+    </script>
+    <style>
+        body{
+            background: #b5bcbc;
+        }
+        #div{
+            border:5px solid red;
+            border-radius: 20px;
+            margin-left: 20px;
+            width: 500px;
+            height: 500px;
+            font-weight: bold;
+            color:orchid;
+            font-size: 50px;
+            background:linear-gradient(pink,yellow,pink);
+            text-align: center;
+            position: fixed;
+    
+        }
+        .text{
+          
+           margin-top: 200px;
+        }
+        .btn{
+            margin-left: 200px;
+        }
+       
+    </style>
+</head>
+
+<body>
+   
+    <div class= "btn btn-group ">
+    <button id="l" class="btn btn-primary">slide left</button>
+    <button id="r" class="btn btn-secondary">slide right</button>
+    <button id="w" class="btn btn-success">Grow width and height</button>
+    <button id="m" class="btn btn-danger">margin</button>
+    <button id="s" class="btn btn-light">font-size</button>
+    <button id="rs" class="btn btn-warning">reset</button>
+    <button id="st" class="btn btn-primary">stop</button>
+    </div>
+      
+    <div id="div">
+        <div class="text"> Ladi Swami das</div>
+    
+    </div>
+</body>
+</html>

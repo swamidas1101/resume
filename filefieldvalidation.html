@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flle field validation:more than one fields</title>
+    <style>
+     body{
+            
+            background-image:url("images/n.png");
+         background-size: cover;
+             
+        }
+        h1{
+            font-family:fantasy;
+            color: #ffeb00;
+            text-transform: uppercase;
+            
+    
+        }
+        table{
+            font-size: 20px;
+            font-weight: bold;
+            color:white;
+            border-color: #ffeb00;
+            width: 48%;
+            
+        
+          
+            
+        }
+        table tr{
+            height: 35px;
+        }
+         P{
+            font-family: impact;
+            font-size: 20px;
+            color: #fdbd0a;
+        }
+       
+    
+    </style>
+    
+    <script>
+     function ss(){
+           var x= document.myform.user;
+           var y= document.myform.image;
+           var v = document.myform.psw;
+           var mm = document.myform.mail;
+           if(userval()){
+               if(pswval()){
+                   if(mailval()){
+                        if(imgval()){
+                        
+                            
+                              //action=user.php
+                        }
+                       else {return false;}
+                }
+                   else{return false;}
+                }
+             else{return false;}
+           }
+            else{return false;}
+         
+           function userval(){
+               var n=/^[A-Za-z0-9]{3,9}$/;
+               var o=n.test(x.value);
+               if(o==false){
+                   alert("Name should not empty");
+                   x.focus();
+                   return false;
+               }
+              else{
+                   return true;}
+           }
+         
+         function pswval(){
+             var p = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+             var q = p.test(v.value);
+             if(q==false){
+                 alert("Password should contain one uppercase,one lowercase, one symbol and one number and min 7 and max 15");
+                 return false;
+                 v.focus();
+             }
+             else{
+                 return true;
+             }
+         }
+        
+          
+         function mailval(){
+             var g = /^[a-z0-9!_\.\-]+@gmail.com$/;
+             var w = g.test(v.value);
+             if(w==false){
+                 alert("Enter valid mail (gmail.com only)");
+                 return false;
+                 mm.focus();
+             }
+             else{
+                 return true;
+             }
+         }
+        
+           function imgval(){
+               var m = /\.(jpg|png|gif)$/;//regular expressions
+               var c = m.test(y.value);
+               if(c==false){
+                   alert("it only accept jpg|png|gif");
+                   return false;
+                   y.focus();
+               }
+               else{
+                   alert("successfully");
+                   return true;}
+           }
+       }
+    </script>
+</head>
+
+<body onload=document.myform.user.focus();>
+    <h1 align="center">Form Validation</h1>
+    <table align="center" border="3px" cellspacing="0" width="50%" >
+    <form name="myform" onsubmit="return ss()" action="user.php" align="center">
+        
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="user" placeholder="enter your name " ></td>
+            </tr>
+   <tr>
+       <td>password:</td>
+       <td><input type="password" name="psw" placeholder="enter password 7-15" id="password">
+           <input type="checkbox" onchange="document.getElementById('password').type=this.checked?'text':'password'" >Show password</td>
+    </tr>
+   <tr> 
+       <td>Email:</td>
+       <td><input type="text" name="mail" placeholder="abc@gmail.com " ></td>
+    </tr>
+           <tr>
+               <td>file choose:</td>
+               <td><input type="file" name="image"></td>
+            </tr>
+    <tr>
+        <td><input type="submit" ></td>
+        <td><input type="reset" value="clear"></td>
+        </tr>
+        </form>
+        </table>
+   
+    
+</body>
+</html>

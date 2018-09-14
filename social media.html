@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>floating social icons</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="share dragable">
+        <div class="toggle"></div>
+    <ul>
+    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+    
+    </ul>
+        </div>
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        $(".toggle").click(function(){
+            $(".toggle").toggleClass("active");
+            $("ul").toggleClass("active");
+            $(".dragable").draggable();
+        });
+    })
+    </script>
+</body>
+</html>
