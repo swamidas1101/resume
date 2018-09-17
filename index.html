@@ -12,32 +12,15 @@
    <link rel="stylesheet" href="styles.css">
     <script src="js/bootstrap.js"></script>
     <script src="jquery-3.3.1.js"></script>
-    <script>
-         $(document).ready(function(){
-        $(window).scroll(function(){
-  	     var scroll = $(window).scrollTop();
-          if (scroll > 100) {
-            $(".navbar").css("background" , "rgba(255, 72, 0, 0.7)");
-              $(".navbar ul li a").css("color","white");
-        
-	  }
-        else{
-            
-		  $(".navbar").css("background" , "white"); 
-          $(".navbar ul li a").css("color", "#ff4800");
-	  }
-           
-  });
-                 $('[data-toggle="tooltip"]').tooltip();  
-});
-    </script>
+
     
     
 </head>
 
 <body>
   
-    <div class="total" style="width:83%;margin:auto">
+    <div class="total" style="overflow-x: hidden;">
+         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       <div id="home"></div>
         <div class="header">
             <marquee onMouseOver="stop()" onMouseOut="start()"><h2>My Curriculum vitae</h2></marquee>
@@ -396,8 +379,25 @@
             }
         });
          
+         
+    // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+         function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+         }
+
+// When the user clicks on the button, scroll to the top of the document
+         function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+          $('[data-toggle="tooltip"]').tooltip();  
     </script>
- 
   
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
